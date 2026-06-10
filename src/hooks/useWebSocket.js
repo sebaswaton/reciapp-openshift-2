@@ -26,7 +26,7 @@ export function useWebSocket(onMessage, enabled = true, onOpen) {
     if (!token) return;
 
     const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:8000";
-    const wsBase = apiUrl.replace(/^https?/, "ws");
+    const wsBase = apiUrl.replace(/^http/, "ws");
     let delay = 1000;
     let stopped = false;   // evita reconexiones "zombi" tras desmontar
 
